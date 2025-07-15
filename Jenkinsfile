@@ -4,6 +4,9 @@ pipeline {
   environment {
     DOCKER_IMAGE = 'emanzaki/jenkins_app'
   }
+  tools {
+    maven 'maven'
+  }
   stages {
     stage('Run Unit Tests ...') {
       steps {
