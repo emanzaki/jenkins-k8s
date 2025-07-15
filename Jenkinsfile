@@ -40,7 +40,7 @@ pipeline {
     }
     stage('Edit deployment.yml ...') {
       steps {
-        sh "sed -i 's|image: .* |image: $DOCKER_IMAGE:$BUILD_NUMBER|' deployment.yml"
+        sh "sed -i 's|image:|image: $DOCKER_IMAGE:$BUILD_NUMBER|' deployment.yml"
       }
     }
     stage('Deploy to K8s Cluster ...') {
