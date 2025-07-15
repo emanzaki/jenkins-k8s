@@ -45,7 +45,7 @@ pipeline {
     }
     stage('Deploy to K8s Cluster ...') {
       steps {
-        sh "minikube kubectl apply -f deployment.yaml"
+        sh "minikube kubectl -- apply -f deployment.yml"
       }
     }
   }
